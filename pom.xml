@@ -6,7 +6,9 @@
 
     <groupId>com.github.MaFeLP</groupId>
     <artifactId>DiscordBot</artifactId>
+    <packaging>pom</packaging>
     <version>ALPHA-0.1</version>
+
 
     <dependencies>
         <dependency>

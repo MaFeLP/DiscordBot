@@ -15,23 +15,28 @@ public class Props {
     public final String token;
     public final String prefix;
     public final String botTestMessage;
+    public final String defaultActivity;
     public final long botID;
     public final long ownerID;
+    public final long messageDeleteDelay;
 
 
     //Initialises all variables
     public Props() {
-        logToken        = getBooleanProperty("logToken");
-        showInviteLink  = getBooleanProperty("showInviteLink");
-        logServer       = getBooleanProperty("logServer");
-        logMembers      = getBooleanProperty("logMembers") && logServer;  //Checks if logServer is enabled and only displays members at startup
-        enableCLI       = getBooleanProperty("enableCLI");
-        autoJoin        = getBooleanProperty("autoJoin");
-        token           = getStringProperty("token");
-        prefix          = getStringProperty("prefix");
-        botID           = getLongProperty("botID");
-        ownerID         = getLongProperty("ownerID");
-        botTestMessage  = getStringProperty("botTestMessage");
+        logToken            = getBooleanProperty("logToken");
+        showInviteLink      = getBooleanProperty("showInviteLink");
+        logServer           = getBooleanProperty("logServer");
+                            //Checks if logServer is enabled and only then displays members at startup
+        logMembers          = getBooleanProperty("logMembers") && logServer;
+        enableCLI           = getBooleanProperty("enableCLI");
+        autoJoin            = getBooleanProperty("autoJoin");
+        token               = getStringProperty("token");
+        prefix              = getStringProperty("prefix");
+        botTestMessage      = getStringProperty("botTestMessage");
+        defaultActivity     = getStringProperty("defaultActivity");
+        botID               = getLongProperty("botID");
+        ownerID             = getLongProperty("ownerID");
+        messageDeleteDelay  = getLongProperty("messageDeleteDelay");
     }
 
     /**

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Main-Class: com.github.MaFeLP.Main
+Class-Path: logging-interceptor-3.9.1.jar okhttp-3.9.1.jar json-20170516
+ .jar annotations-20.1.0.jar bcprov-jdk15on-1.59.jar vavr-0.10.1.jar jac
+ kson-core-2.9.3.jar nv-websocket-client-2.6.jar javacord-core-3.1.1.jar
+  okio-1.13.0.jar vavr-match-0.10.1.jar javacord-api-3.1.1.jar emoji-jav
+ a-5.1.1.jar xsalsa20poly1305-0.10.1.jar jackson-databind-2.9.3.jar jack
+ son-annotations-2.9.0.jar log4j-api-2.11.0.jar
+

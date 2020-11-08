@@ -7,6 +7,10 @@ import org.javacord.api.DiscordApi;
 import static java.lang.System.out;
 import com.github.MaFeLP.settings.*;
 import org.javacord.api.DiscordApiBuilder;
+import org.javacord.api.entity.activity.Activity;
+import org.javacord.api.entity.activity.ActivityType;
+
+import javax.swing.text.html.parser.Entity;
 
 public class Init {
 
@@ -38,6 +42,7 @@ public class Init {
                 .addListener(new ServerBecomesAvailableListeners())
                 .setToken(props.token)
                 .setWaitForServersOnStartup(false)
+                .setWaitForUsersOnStartup(false)
                 .login()
                 .join();
         out.println(Colors.GREEN_BOLD_BRIGHT + "==> Done!" + Colors.RESET);
@@ -52,6 +57,7 @@ public class Init {
             out.println(Colors.GREEN_BRIGHT + "Bot invite link is: " + Colors.YELLOW_BRIGHT + api.createBotInvite() + Colors.RESET);
         }
 
+        api.updateActivity(ActivityType.CUSTOM, props.defaultActivity);
         return api;
     }
 }

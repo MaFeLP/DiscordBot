@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Test:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc3a0ec9-8ead-43d8-a23e-c5e5ca209004" name="Default Changelist" comment="" />
+    <list default="true" id="fc3a0ec9-8ead-43d8-a23e-c5e5ca209004" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DiscordBot_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Test_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/rescources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/discordbot.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discordbot.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/settings/Props.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/settings/Props.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/settings/Props.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/settings/Props.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -18,19 +44,23 @@
     </option>
   </component>
   <component name="ProjectId" id="1jnKRvjYRyMebBG0THj4TEehwXc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.MaFeLP.Main" />
       <module name="DiscordBot" />
@@ -44,9 +74,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscordBot.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Test_jar/DiscordBot.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DiscordBot.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/DiscordBot_jar/DiscordBot.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.DiscordBot.jar (1)" />
+        <item itemvalue="JAR Application.DiscordBot.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -59,32 +110,65 @@
       <option name="presentableId" value="Default" />
       <updated>1604434412030</updated>
       <workItem from="1604434415193" duration="214000" />
+      <workItem from="1604434715731" duration="131000" />
+      <workItem from="1604434937433" duration="963000" />
+      <workItem from="1604686848090" duration="2986000" />
+      <workItem from="1604784855544" duration="53000" />
+      <workItem from="1604862289155" duration="6242000" />
     </task>
+    <task id="LOCAL-00001" summary="File add commit">
+      <created>1604434769020</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604434769020</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="File add commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="File add commit" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1604434629823">
+    <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604435749774">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604434629823" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1604434629823">
+    <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604435749774" />
+    <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1604863588322">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604434629823" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1604434629823">
+    <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604863588322" />
+    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2" timestamp="1604434768826">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604434629823" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1604434629823">
+    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604434768826" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1604868349164">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604434629823" />
-    <state x="448" y="100" key="SettingsEditor" timestamp="1604434527220">
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604868349164" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1604868349164">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="448" y="100" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604434527220" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604868349164" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1604868349164">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604868349164" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1604868349164">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604868349164" />
+    <state x="448" y="100" width="1024" height="844" key="SettingsEditor" timestamp="1604435776478">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="448" y="100" width="1024" height="844" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604435776478" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1604434782921">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604434782921" />
   </component>
 </project>

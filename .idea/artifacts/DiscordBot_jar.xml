@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact name="DiscordBot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DiscordBot_jar</output-path>
+    <root id="root">
+      <element id="archive" name="DiscordBot.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/rescources/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="DiscordBot" />
+      </element>
+      <element id="library" level="project" name="Maven: com.squareup.okhttp3:logging-interceptor:3.9.1" />
+      <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.9.1" />
+      <element id="library" level="project" name="Maven: org.json:json:20170516" />
+      <element id="library" level="project" name="Maven: org.jetbrains:annotations:20.1.0" />
+      <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.59" />
+      <element id="library" level="project" name="Maven: io.vavr:vavr:0.10.1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.3" />
+      <element id="library" level="project" name="Maven: com.neovisionaries:nv-websocket-client:2.6" />
+      <element id="library" level="project" name="Maven: org.javacord:javacord-core:3.1.1" />
+      <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.13.0" />
+      <element id="library" level="project" name="Maven: io.vavr:vavr-match:0.10.1" />
+      <element id="library" level="project" name="Maven: org.javacord:javacord-api:3.1.1" />
+      <element id="library" level="project" name="Maven: com.vdurmont:emoji-java:5.1.1" />
+      <element id="library" level="project" name="Maven: com.codahale:xsalsa20poly1305:0.10.1" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.3" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+      <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.11.0" />
+    </root>
+  </artifact>
+</component>
