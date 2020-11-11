@@ -53,7 +53,8 @@ public class MessageListeners implements MessageCreateListener {
           "myID",
           "botID",
           "invite",
-          "botinvite"
+          "botinvite",
+          "test"
         };
 
         //Variables for easier use
@@ -98,8 +99,9 @@ public class MessageListeners implements MessageCreateListener {
         //Command invite
         if (content.equalsIgnoreCase(props.prefix + "invite")) { invite(e, props); }
         //Command botInvite
-        if (content.equalsIgnoreCase(props.prefix + "botinvite")) { botInvite(e, props);
-        };
+        if (content.equalsIgnoreCase(props.prefix + "botinvite")) { botInvite(e, props); }
+        //TestCommand
+        if (content.equalsIgnoreCase(props.prefix + "test")) { test(e, props); }
     }
     /**
      * Gives the user his/her id
@@ -352,6 +354,10 @@ public class MessageListeners implements MessageCreateListener {
             interruptedException.printStackTrace();
             err.println("Message already deleted or not reachable!");
         }
+    }
+
+    private void test(MessageCreateEvent e, Props props) {
+        channel.sendMessage("Test @" + authorID + "");
     }
 
     /**

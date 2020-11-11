@@ -9,7 +9,7 @@ import static java.lang.System.out;
 
 public class Main {
 
-    public static void main (String[] args) throws InterruptedException {
+    public static void main (String[] args) {
         Props props = new Props(); //Settings to call
 
         Init.run(props);
