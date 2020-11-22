@@ -16,6 +16,7 @@ public class Props {
     public final String prefix;
     public final String botTestMessage;
     public final String defaultActivity;
+    public final String loggingTemplate;
     public final long botID;
     public final long ownerID;
     public final long messageDeleteDelay;
@@ -34,6 +35,7 @@ public class Props {
         prefix              = getStringProperty("prefix");
         botTestMessage      = getStringProperty("botTestMessage");
         defaultActivity     = getStringProperty("defaultActivity");
+        loggingTemplate     = getStringProperty("loggingTemplate");
         botID               = getLongProperty("botID");
         ownerID             = getLongProperty("ownerID");
         messageDeleteDelay  = getLongProperty("messageDeleteDelay");

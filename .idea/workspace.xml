@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Test:jar" />
+      <artifact name="DiscordBot:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,16 +10,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc3a0ec9-8ead-43d8-a23e-c5e5ca209004" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DiscordBot_jar2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Test_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discordbot.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discordbot.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/cli/CLIHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/cli/CLIHub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/settings/Props.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/settings/Props.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Init.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Init.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/cli/CLIHub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/cli/CLIHub.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,11 +59,21 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/java-logging" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/logging" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -62,15 +89,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,7 +130,8 @@
       <workItem from="1604686848090" duration="2986000" />
       <workItem from="1604784855544" duration="53000" />
       <workItem from="1604862289155" duration="6431000" />
-      <workItem from="1605122500890" duration="2133000" />
+      <workItem from="1605122500890" duration="2320000" />
+      <workItem from="1606062047526" duration="16410000" />
     </task>
     <task id="LOCAL-00001" summary="File add commit">
       <created>1604434769020</created>
@@ -121,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604868800400</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Small Update with some fixes&#10;Updated build in out/artifacts/DiscordBot_jar/*">
+      <created>1605125729970</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605125729970</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,44 +163,53 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="File add commit" />
     <MESSAGE value="added help, invite, botinvite commands&#10;Moved more commands to embed-output" />
-    <option name="LAST_COMMIT_MESSAGE" value="added help, invite, botinvite commands&#10;Moved more commands to embed-output" />
+    <MESSAGE value="Small Update with some fixes&#10;Updated build in out/artifacts/DiscordBot_jar/*" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small Update with some fixes&#10;Updated build in out/artifacts/DiscordBot_jar/*" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604435749774">
+    <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606068030127">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604435749774" />
+    <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606068030127" />
     <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1604863588322">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604863588322" />
-    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2" timestamp="1604868799903">
+    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2" timestamp="1605125729469">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604868799903" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1605123879924">
+    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605125729469" />
+    <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1606072136155">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605123879924" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1605123879924">
+    <state x="748" y="280" key="FileChooserDialogImpl/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606072136155" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1606078775120">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605123879924" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1605123879924">
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775120" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1606078775119">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605123879924" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1605123879924">
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775119" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1606078775119">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605123879924" />
-    <state x="448" y="100" width="1024" height="844" key="SettingsEditor" timestamp="1604435776478">
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775119" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1606078775120">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="448" y="100" width="1024" height="844" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604435776478" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1604868810173">
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775120" />
+    <state x="498" y="180" key="Maven.ArtifactSearchDialog" timestamp="1606068906428">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604868810173" />
+    <state x="498" y="180" key="Maven.ArtifactSearchDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606068906428" />
+    <state x="458" y="134" width="1024" height="844" key="SettingsEditor" timestamp="1606068049331">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="458" y="134" width="1024" height="844" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606068049331" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1605125734023">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605125734023" />
   </component>
 </project>

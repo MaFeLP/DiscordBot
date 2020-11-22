@@ -1,8 +1,11 @@
 package com.github.MaFeLP.cli;
 
 import com.github.MaFeLP.Main;
+import com.github.MaFeLP.bot.Init;
 import com.github.MaFeLP.settings.Colors;
 import com.github.MaFeLP.settings.Props;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
 import java.util.Scanner;
 
@@ -11,13 +14,15 @@ import static java.lang.System.err;
 import static java.lang.System.out;
 
 public class CLIHub {
+    //Initialises a logger for this class
+    private static final Logger logger = LogManager.getLogger(CLIHub.class);
+
     public void startCLI(DiscordApi api, Props props) {
-        out.println(Colors.GREEN_BRIGHT +
-                "CLI started!\n" + Colors.RESET +
-                "Type \"help\" for help.");
+        logger.info("Starting command line interface");
+        logger.info("Command line interface started. Use 'help' for help");
 
         if (api == null) {
-            err.println("\nBot hasn't joined any servers!\nUse \"join\" to join!");
+            logger.warn("\nBot hasn't joined any servers!\nUse \"join\" to join!");
         }
 
         Scanner keyboard = new Scanner(System.in);

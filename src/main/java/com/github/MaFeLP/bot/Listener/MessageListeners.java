@@ -1,8 +1,12 @@
 package com.github.MaFeLP.bot.Listener;
 
+import com.github.MaFeLP.Main;
+import com.github.MaFeLP.cli.CLIHub;
 import com.github.MaFeLP.settings.Colors;
 import com.github.MaFeLP.settings.Props;
 import com.vdurmont.emoji.EmojiParser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.javacord.api.entity.channel.ServerTextChannel;
 import org.javacord.api.entity.channel.TextChannel;
 import org.javacord.api.entity.message.Message;
@@ -23,8 +27,12 @@ import static java.lang.System.err;
 import static java.lang.System.out;
 
 public class MessageListeners implements MessageCreateListener {
+    //Initialises a logger for this class
+    private static final Logger logger = LogManager.getLogger(MessageListeners.class);
+
     public MessageListeners() {
-        out.println(Colors.GREEN + "MessageListener enabled!" + Colors.RESET);
+        logger.info("Enabling Message Listener");
+        logger.info("Message Listener enabled");
     }
 
     private MessageAuthor author;    //Who sent the message
@@ -40,14 +48,18 @@ public class MessageListeners implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent e) {
         Props props = new Props();
+        logger.debug("A message was sent to channel " + channel + " by " + authorName);
 
         //Check if message started with prefix
         if (!e.getMessageContent().startsWith(props.prefix)) {
+            logger.debug("Message was not a command.");
             return;
+        } else {
+            logger.debug("Message is a command");
         }
 
-        //Available commands (only for check):
-        String[] commands = {
+        //Available commandList (only for check):
+        String[] commandList = {
           "help",
           "disconnect", "shutdown", "exit",
           "myID",
@@ -67,48 +79,56 @@ public class MessageListeners implements MessageCreateListener {
 
         //Checks if the bot has sent the test message
         if (content.equals(props.prefix + props.botTestMessage)) {
+            logger.info("The bot has sent a test message to " + channel);
             botTestMessage(e);
             return;
         }
 
+        logger.debug("Converting message to command...");
         //Splits the input message into an array, so it can be treated as a command with arguments
         String[] input = content.split(" ");
 
+        String command = input[0];
+        logger.debug("Command is: " + command);
+
         //Check if command exists
         boolean commandExists = false;
-        for (String s: commands) {
-            if ((props.prefix + s).equalsIgnoreCase(input[0])) {
-                out.println(authorName + " issued command " + input[0]);
+        for (String s: commandList) {
+            if ((props.prefix + s).equalsIgnoreCase(command)) {
+                logger.info(authorName + " issued command " + command);
                 commandExists = true;
             }
         }
         if (!commandExists) {
+            logger.error("Command " + input[0] + " doesn't exist! (Caused by " + authorName + ")");
             channel.sendMessage("Command \"" + input[0] + "\" doesn't exist!");
         }
 
         //Command help
-        if (content.equalsIgnoreCase(props.prefix + "help")) { help(e, props); }
+        if (command.equalsIgnoreCase(props.prefix + "help")) { help(e, props); }
         //Command disconnect
-        if (content.equalsIgnoreCase(props.prefix + "disconnect") ||
-            content.equalsIgnoreCase(props.prefix + "shutdown") ||
-            content.equalsIgnoreCase(props.prefix + "exit")) { disconnect(e); }
+        if (command.equalsIgnoreCase(props.prefix + "disconnect") ||
+            command.equalsIgnoreCase(props.prefix + "shutdown") ||
+            command.equalsIgnoreCase(props.prefix + "exit")) { disconnect(e); }
         //Command myID
-        if (content.equalsIgnoreCase(props.prefix + "myID")) { myID(e, props); }
+        if (command.equalsIgnoreCase(props.prefix + "myID")) { myID(e, props); }
         //Command botID
-        if (content.equalsIgnoreCase(props.prefix + "botID")) { botID(e); }
+        if (command.equalsIgnoreCase(props.prefix + "botID")) { botID(e); }
         //Command invite
-        if (content.equalsIgnoreCase(props.prefix + "invite")) { invite(e, props); }
+        if (input[0].equalsIgnoreCase(props.prefix + "invite")) { invite(e, props); }
         //Command botInvite
-        if (content.equalsIgnoreCase(props.prefix + "botinvite")) { botInvite(e, props); }
+        if (input[0].equalsIgnoreCase(props.prefix + "botinvite")) { botInvite(e, props); }
         //TestCommand
-        if (content.equalsIgnoreCase(props.prefix + "test")) { test(e, props); }
+        if (input[0].equalsIgnoreCase(props.prefix + "test")) { test(e, props); }
     }
     /**
-     * Gives the user his/her id
+     * Prints the help embed to the channel
      * @param e MessageCreateEvent issued by the Message Sender
      * @param props Props class for dealing with a properties file
      */
     private void help(MessageCreateEvent e, Props props) {
+        logger.info("Sending help embed to channel " + channel);
+
         EmbedBuilder reply = new EmbedBuilder()
                 .setTitle("Help")
                 .setDescription("The help of this Discord Bot!")
@@ -148,18 +168,22 @@ public class MessageListeners implements MessageCreateListener {
      * @param e is the event which holds all specific information about the message
      */
     private void disconnect(MessageCreateEvent e) {
-        Props props =new Props();
+        Props props = new Props();
         if (authorID != props.ownerID) {
             e.addReactionsToMessage(EmojiParser.parseToUnicode(":cry:"));
             new MessageBuilder()
                     .append("We are very sorry, but...\n")
                     .append("You don't have the permission to turn off the bot.:cry:")
                     .send(channel);
+            logger.warn("User " + authorName + " tried to shut down the bot! Permission denied.");
             return;
         }
 
+        logger.warn("A bot shutdown was caused by " + authorName + "!");
+
         e.addReactionsToMessage(EmojiParser.parseToUnicode(":wave:"));
 
+        logger.debug("Sending shutdown countdown embed to channel " + channel);
         EmbedBuilder reply = new EmbedBuilder()
                 .setTitle("Shutdown")
                 .setDescription("The bot is being shut down...")
@@ -178,22 +202,18 @@ public class MessageListeners implements MessageCreateListener {
         try {
             for (long i = props.messageDeleteDelay; i > 0; i--) {
                 msg.get().edit(reply.setFooter("Shutting down in " + i + " seconds."));
+                logger.debug("Shutdown timer is no at: " + i);
                 TimeUnit.SECONDS.sleep(1);
             }
             msg.get().edit(reply.setFooter("Shutting down..."));
         } catch (InterruptedException | ExecutionException interruptedException) {
-            interruptedException.printStackTrace();
-            err.println("Message already deleted or not reachable!");
+            //interruptedException.printStackTrace();
+            logger.error("Countdown message already deleted or not reachable!");
+            logger.error("Error code:\n" + interruptedException.toString());
         }
 
         //Shutdown sequence
-        out.println(Colors.BLUE + "Shutting the bot safely down..." + Colors.RESET);
-        e.getApi().disconnect();
-        out.println(Colors.GREEN_BOLD_BRIGHT + "==> Done!" + Colors.RESET);
-        out.println(Colors.YELLOW_BRIGHT + "Shutdown was caused by: " + authorName);
-
-        out.println(Colors.BLUE + "Exiting Java Runtime with exit code 0..." + Colors.RESET);
-        System.exit(0);
+        Main.shutdown(e.getApi());
     }
 
     /**
@@ -202,9 +222,10 @@ public class MessageListeners implements MessageCreateListener {
      * @param props Props class for dealing with a properties file
      */
     private void myID(MessageCreateEvent e, Props props) {
-        out.println("Id of user " + authorName + " is: " + authorID);
+        logger.info("Id of user " + authorName + " is: " + authorID);
 
         //Sending the userID via private message
+        logger.debug("Sending user " + authorName + " his id (" + authorID + ") via direct message.");
         EmbedBuilder dmEmbed = new EmbedBuilder()
                 .setTitle("Your ID - Command")
                 .setDescription("Displays your ID and deletes message.")
@@ -218,6 +239,7 @@ public class MessageListeners implements MessageCreateListener {
         user.sendMessage(dmEmbed);
 
         //Sending an info into the server chat, that the id has been sent via dm.
+        logger.debug("Sending info embed to server, that id has been sent via direct message");
         EmbedBuilder reply = new EmbedBuilder()
                 .setTitle("Your ID")
                 .setDescription(null)
@@ -240,8 +262,9 @@ public class MessageListeners implements MessageCreateListener {
      * @param e MessageCreateEvent issued by the Message Sender
      */
     private void botID(MessageCreateEvent e) {
-        out.println("Bot ID is: "+ e.getApi().getYourself().getIdAsString());
+        logger.info("Bot ID is: "+ e.getApi().getYourself().getIdAsString());
 
+        logger.debug("Info message has been sent to the channel, that id has been logged to console");
         EmbedBuilder reply = new EmbedBuilder()
                 .setTitle(null)
                 .setDescription(null)
@@ -262,7 +285,7 @@ public class MessageListeners implements MessageCreateListener {
      * @param e MessageCreateEvent issued by the Message Sender
      */
     private void botTestMessage(MessageCreateEvent e) {
-        out.println("The bot has sent a test message.");
+        logger.info("The bot has sent a test message.");
         e.getMessage().delete();
     }
 
