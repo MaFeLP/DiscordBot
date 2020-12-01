@@ -10,21 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc3a0ec9-8ead-43d8-a23e-c5e5ca209004" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DiscordBot_jar2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Test_jar.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discordbot.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discordbot.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/cli/CLIHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/cli/CLIHub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/settings/Props.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/settings/Props.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Init.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Init.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/cli/CLIHub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/cli/CLIHub.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,17 +79,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DiscordBot.jar (1)" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Test_jar/DiscordBot.jar" />
       <method v="2" />
@@ -131,7 +110,9 @@
       <workItem from="1604784855544" duration="53000" />
       <workItem from="1604862289155" duration="6431000" />
       <workItem from="1605122500890" duration="2320000" />
-      <workItem from="1606062047526" duration="16410000" />
+      <workItem from="1606062047526" duration="16714000" />
+      <workItem from="1606850509461" duration="85000" />
+      <workItem from="1606850642918" duration="6212000" />
     </task>
     <task id="LOCAL-00001" summary="File add commit">
       <created>1604434769020</created>
@@ -154,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605125729970</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added new Logging interface with log4j2.&#10;&#10;INFO: Logging is under development. Some classes/Methods need to be updated to the new standard...&#10;&#10;WARN: By now, the bot only runs in intelliJ IDEA, not on the terminal!">
+      <created>1606079725106</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606079725106</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,41 +152,54 @@
     <MESSAGE value="File add commit" />
     <MESSAGE value="added help, invite, botinvite commands&#10;Moved more commands to embed-output" />
     <MESSAGE value="Small Update with some fixes&#10;Updated build in out/artifacts/DiscordBot_jar/*" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Update with some fixes&#10;Updated build in out/artifacts/DiscordBot_jar/*" />
+    <MESSAGE value="Added new Logging interface with log4j2.&#10;&#10;INFO: Logging is under development. Some classes/Methods need to be updated to the new standard...&#10;&#10;WARN: By now, the bot only runs in intelliJ IDEA, not on the terminal!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new Logging interface with log4j2.&#10;&#10;INFO: Logging is under development. Some classes/Methods need to be updated to the new standard...&#10;&#10;WARN: By now, the bot only runs in intelliJ IDEA, not on the terminal!" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606853919574">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606853919574" />
     <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606068030127">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606068030127" />
+    <state x="644" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606850520572">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="644" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606850520572" />
     <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1604863588322">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604863588322" />
-    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2" timestamp="1605125729469">
+    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2" timestamp="1606079724800">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605125729469" />
+    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079724800" />
     <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1606072136155">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="748" y="280" key="FileChooserDialogImpl/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606072136155" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1606078775120">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1606856213724">
+      <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775120" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1606078775119">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213724" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746054" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1606856213724">
+      <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775119" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1606078775119">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213724" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746053" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1606856213723">
+      <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775119" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1606078775120">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213723" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746053" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1606856213724">
+      <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606078775120" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213724" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746053" />
     <state x="498" y="180" key="Maven.ArtifactSearchDialog" timestamp="1606068906428">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -207,9 +208,9 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="458" y="134" width="1024" height="844" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606068049331" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1605125734023">
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1606079730372">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1605125734023" />
+    <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079730372" />
   </component>
 </project>
