@@ -2,10 +2,10 @@
 <Configuration status="INFO">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout disableANSI="false" pattern="%highlight{%d{HH:mm:ss} [%t] %-5level %logger{36}:\t %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>
+            <PatternLayout disableANSI="false" pattern="%highlight{%d{HH:mm:ss} [%t] %-5level %logger{36}:\t %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=white, DEBUG=green bold, TRACE=blue}"/>
         </Console>
         <Console name="BotLevel" target="SYSTEM_OUT">
-            <PatternLayout disableANSI="false" pattern="%highlight{%d{HH:mm:ss} [%t] %-5level %logger{36}:\t %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue} in shard %X"/>
+            <PatternLayout disableANSI="false" pattern="%highlight{%d{HH:mm:ss} [%t] %-5level %logger{36}:\t %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=white, DEBUG=green bold, TRACE=blue} in shard %X"/>
         </Console>
     </Appenders>
     <Loggers>
@@ -22,6 +22,9 @@
             <AppenderRef ref="Console"/>
         </Logger>
         <Logger name="com.github.MaFeLP.bot.Listener.ServerBecomesAvailableListeners" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="com.github.MaFeLP.bot.Audio.Play" level="info" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
         <Root level="info">

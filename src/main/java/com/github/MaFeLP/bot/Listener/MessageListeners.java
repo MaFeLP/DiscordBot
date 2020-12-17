@@ -1,12 +1,15 @@
 package com.github.MaFeLP.bot.Listener;
 
 import com.github.MaFeLP.Main;
-import com.github.MaFeLP.cli.CLIHub;
-import com.github.MaFeLP.settings.Colors;
+import com.github.MaFeLP.bot.Audio.AudioConnectionBuilder;
+import com.github.MaFeLP.bot.Audio.LavaPlayerAudioSource;
+import com.github.MaFeLP.bot.Audio.Play;
 import com.github.MaFeLP.settings.Props;
 import com.vdurmont.emoji.EmojiParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.javacord.api.audio.AudioConnection;
+import org.javacord.api.audio.AudioSource;
 import org.javacord.api.entity.channel.ServerTextChannel;
 import org.javacord.api.entity.channel.TextChannel;
 import org.javacord.api.entity.message.Message;
@@ -19,12 +22,12 @@ import org.javacord.api.entity.user.User;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.err;
-import static java.lang.System.out;
 
 public class MessageListeners implements MessageCreateListener {
     //Initialises a logger for this class
@@ -94,6 +97,13 @@ public class MessageListeners implements MessageCreateListener {
         String command = input[0];
         logger.debug("Command is: " + command);
 
+        ArrayList<String> arglist = new ArrayList<String>();
+        for (int i = 1; i == input.length - 1; i++) {
+            arglist.add(input[i]);
+        }
+        String[] args = arglist.toArray(new String[0]);
+
+
         //Check if command exists
         boolean commandExists = false;
         for (String s: commandList) {
@@ -109,6 +119,11 @@ public class MessageListeners implements MessageCreateListener {
 
         //Command help
         if (command.equalsIgnoreCase(props.prefix + "help")) { help(e, props); }
+        //Command play
+        if (command.equalsIgnoreCase(props.prefix + "play") ||
+            command.equalsIgnoreCase(props.prefix + "p")) {
+            play(e, args);
+        }
         //Command disconnect
         if (command.equalsIgnoreCase(props.prefix + "disconnect") ||
             command.equalsIgnoreCase(props.prefix + "shutdown") ||
@@ -118,12 +133,13 @@ public class MessageListeners implements MessageCreateListener {
         //Command botID
         if (command.equalsIgnoreCase(props.prefix + "botID")) { botID(e); }
         //Command invite
-        if (input[0].equalsIgnoreCase(props.prefix + "invite")) { invite(e, props); }
+        if (command.equalsIgnoreCase(props.prefix + "invite")) { invite(e, props); }
         //Command botInvite
-        if (input[0].equalsIgnoreCase(props.prefix + "botinvite")) { botInvite(e, props); }
+        if (command.equalsIgnoreCase(props.prefix + "botinvite")) { botInvite(e, props); }
         //TestCommand
-        if (input[0].equalsIgnoreCase(props.prefix + "test")) { test(e, props); }
+        if (command.equalsIgnoreCase(props.prefix + "test")) { test(e, props); }
     }
+
     /**
      * Prints the help embed to the channel
      * @param e MessageCreateEvent issued by the Message Sender
@@ -164,6 +180,12 @@ public class MessageListeners implements MessageCreateListener {
         new MessageBuilder()
                 .setEmbed(reply)
                 .send(channel);
+    }
+
+    private void play(MessageCreateEvent e, String[] args) {
+        Thread play = new Thread(new Play(args[0], e.getApi(), e.getMessageAuthor().getConnectedVoiceChannel().get()));
+        play.setName("Play-" + e.getMessageAuthor().getConnectedVoiceChannel().get());
+        play.run();
     }
 
     /**

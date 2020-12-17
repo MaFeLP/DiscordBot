@@ -99,8 +99,10 @@ public class Props {
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println();
-            System.err.println("File discordbot.properties not found!");
-            System.exit(2);
+            System.err.println("File discordbot.properties not found or corrupted.");
+            System.err.println("If this is your first run, ignore this message.\n" +
+                    "Afterwards run .botID and .myID on a server and place the values in the config file.");
+//            System.exit(2);
         }
 
         return out;

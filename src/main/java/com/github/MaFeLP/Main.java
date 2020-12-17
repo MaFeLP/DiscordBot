@@ -5,11 +5,7 @@ import com.github.MaFeLP.bot.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
-
 import java.util.ArrayList;
-
-import static java.lang.System.err;
-import static java.lang.System.out;
 
 public class Main {
 
@@ -32,11 +28,10 @@ public class Main {
      * Shuts the bot down safely
      */
     public static void shutdown () {
-        for (DiscordApi api: apis) {
-
-            //Shutdown sequence
-            Logger logger = LogManager.getLogger(Main.class);
-            logger.warn("\tBot and java runtime are being shut down");
+        //Shutdown sequence
+        Logger logger = LogManager.getLogger(Main.class);
+        logger.warn("\tBot and java runtime are being shut down");
+        for (DiscordApi api : apis) {
             if (api != null) {
                 logger.info("\tDisconnecting the bot safely");
                 api.disconnect();
@@ -44,9 +39,9 @@ public class Main {
             } else {
                 logger.error("\tNo bot was running. Ignoring");
             }
-
-            logger.info("\tExiting Java Runtime with exit code 0");
-            System.exit(0);
         }
+
+        logger.info("\tExiting Java Runtime with exit code 0");
+        System.exit(0);
     }
 }

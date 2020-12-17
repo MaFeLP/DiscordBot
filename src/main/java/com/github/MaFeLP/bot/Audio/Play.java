@@ -8,54 +8,73 @@ import com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.audio.AudioConnection;
 import org.javacord.api.audio.AudioSource;
+import org.javacord.api.entity.channel.ServerVoiceChannel;
 
-public class Play {
+import java.net.URI;
+
+public class Play extends Thread{
+    //Initialises a logger for this class
+    private static final Logger logger = LogManager.getLogger(Play.class);
+    private String link;
     private DiscordApi api;
-    private AudioConnection audioConnection;
+    private ServerVoiceChannel channel;
 
-    public Play(DiscordApi discordApi, AudioConnection audioConnectionInput) {
-        api = discordApi;
-        audioConnection = audioConnectionInput;
+    public Play(String link, DiscordApi api, ServerVoiceChannel channel) {
+        this.link = link;
+        this.api = api;
+        this.channel = channel;
     }
 
+    @Override
+    public void run() {
+        logger.info("Attempting to join Voice Channel " + channel.getName());
 
+        channel.connect().thenAccept(audioConnection -> {
+            logger.info("Successfully joined Voice Channel " + channel.getName());
 
-    public void LavaPlayerManager() {
-        // Create a player manager
-        AudioPlayerManager playerManager = new DefaultAudioPlayerManager();
-        playerManager.registerSourceManager(new YoutubeAudioSourceManager());
-        AudioPlayer player = playerManager.createPlayer();
+            // Create a player manager
+            AudioPlayerManager playerManager = new DefaultAudioPlayerManager();
+            playerManager.registerSourceManager(new YoutubeAudioSourceManager());
+            AudioPlayer player = playerManager.createPlayer();
 
-// Create an audio source and add it to the audio connection's queue
-        AudioSource source = new LavaPlayerAudioSource(api, player);
-        audioConnection.setAudioSource(source);
+            // Create an audio source and add it to the audio connection's queue
+            AudioSource source = new LavaPlayerAudioSource(api, player);
+            audioConnection.setAudioSource(source);
 
-// You can now use the AudioPlayer like you would normally do with Lavaplayer, e.g.,
-        playerManager.loadItem("https://www.youtube.com/watch?v=NvS351QKFV4", new AudioLoadResultHandler() {
-            @Override
-            public void trackLoaded(AudioTrack track) {
-                player.playTrack(track);
-            }
-
-            @Override
-            public void playlistLoaded(AudioPlaylist playlist) {
-                for (AudioTrack track : playlist.getTracks()) {
+            // You can now use the AudioPlayer like you would normally do with Lavaplayer, e.g.,
+            playerManager.loadItem(link, new AudioLoadResultHandler() {
+                @Override
+                public void trackLoaded(AudioTrack track) {
                     player.playTrack(track);
                 }
-            }
 
-            @Override
-            public void noMatches() {
-                // Notify the user that we've got nothing
-            }
+                @Override
+                public void playlistLoaded(AudioPlaylist playlist) {
+                    for (AudioTrack track : playlist.getTracks()) {
+                        player.playTrack(track);
+                    }
+                }
 
-            @Override
-            public void loadFailed(FriendlyException throwable) {
-                // Notify the user that everything exploded
-            }
+                @Override
+                public void noMatches() {
+                    // Notify the user that we've got nothing
+                }
+
+                @Override
+                public void loadFailed(FriendlyException throwable) {
+                    // Notify the user that everything exploded
+                }
             });
+        }).exceptionally(e -> {
+            logger.error("Cannot join Voice Channel " + channel.getName() + " on server " + channel.getServer().getName());
+            logger.error("Maybe the bot does not have the permission to join this channel?");
+            e.printStackTrace();
+            return null;
+        });
     }
 }

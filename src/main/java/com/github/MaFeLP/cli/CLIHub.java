@@ -1,12 +1,13 @@
 package com.github.MaFeLP.cli;
 
 import com.github.MaFeLP.Main;
-import com.github.MaFeLP.bot.Init;
 import com.github.MaFeLP.settings.Colors;
 import com.github.MaFeLP.settings.Props;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
+import org.javacord.api.entity.server.Server;
+
 import java.util.Scanner;
 
 import static com.github.MaFeLP.bot.Init.join;
@@ -36,6 +37,7 @@ public class CLIHub {
                 //case "settings" -> settings(inputArray);
                 case "join" -> join();
                 case "disconnect" -> disconnect();
+                case "servers" -> servers();
                 default -> err.println("Command \"" + command + "\" is not a valid command! Use \"help\" for help.");
             }
 
@@ -45,6 +47,20 @@ public class CLIHub {
         //Shutdown
         keyboard.close();
         Main.shutdown();
+    }
+
+    private void servers() {
+        out.println("" +
+                "\n" +
+                Colors.GREEN + "Joined Servers:\n" +
+                Colors.YELLOW_UNDERLINED + "Server ID" + Colors.RESET + "\t\t" + Colors.YELLOW_UNDERLINED + "Server Name\n" +
+                Colors.CYAN);
+
+        for (DiscordApi api : Main.apis) {
+            for (Server server : api.getServers()) {
+                out.println(server.getId() + "\t" + server.getName());
+            }
+        }
     }
 
     private void help(String[] args) {
@@ -96,7 +112,7 @@ public class CLIHub {
         }
     }
 
-    private DiscordApi disconnect() {
+    private void disconnect() {
         for (DiscordApi api : Main.apis) {
             if (api != null) {
                 out.println(Colors.BLUE + "Shutting the bot safely down..." + Colors.RESET);
@@ -107,6 +123,5 @@ public class CLIHub {
             }
         }
 
-        return null;
     }
 }

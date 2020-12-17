@@ -11,8 +11,6 @@ import com.github.MaFeLP.settings.*;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.activity.ActivityType;
 import org.javacord.api.entity.server.Server;
-
-import java.lang.reflect.Array;
 import java.util.Collection;
 
 public class Init {
