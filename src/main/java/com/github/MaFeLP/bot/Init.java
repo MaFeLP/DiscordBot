@@ -4,17 +4,16 @@ import com.github.MaFeLP.Main;
 import com.github.MaFeLP.bot.Listener.MessageListeners;
 import com.github.MaFeLP.bot.Listener.ServerBecomesAvailableListeners;
 import com.github.MaFeLP.cli.CLIHub;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
-import static java.lang.System.out;
 import com.github.MaFeLP.settings.*;
 import org.javacord.api.DiscordApiBuilder;
-import org.javacord.api.entity.activity.Activity;
 import org.javacord.api.entity.activity.ActivityType;
+import org.javacord.api.entity.server.Server;
 
-import javax.swing.text.html.parser.Entity;
+import java.lang.reflect.Array;
+import java.util.Collection;
 
 public class Init {
     //Initialises a logger for this class
@@ -26,33 +25,35 @@ public class Init {
      */
     public static void run(Props props) {
         logger.info("Setting up a Discord Bot instance");
-        DiscordApi api = null;
 
         if (props.autoJoin) {
-            api = join();
+            join();
         }
 
         //Starts the command line interface CLI if enabled
         if (props.enableCLI) {
             CLIHub cliHub = new CLIHub();
-            cliHub.startCLI(api, props);
+            cliHub.startCLI(props);
         }
     }
 
-    public static DiscordApi join() {
-        logger.info("Creating Bot instance");
+    public static void join() {
+        logger.info("Creating Bot instance(s)");
         Props props = new Props();
-        //Log in the bot and create api instance
-        logger.info("Preparing bot instance");
-        DiscordApi api = new DiscordApiBuilder()
-                //Adds listeners
-                .addListener(new MessageListeners())
-                .addListener(new ServerBecomesAvailableListeners())
-                .setToken(props.token)
+        //Log in the bot and create api shards
+        logger.info("Preparing bot instance(s)");
+
+        new DiscordApiBuilder()
                 .setWaitForServersOnStartup(false)
                 .setWaitForUsersOnStartup(false)
-                .login()
-                .join();
+                .setToken(props.token)
+                .setRecommendedTotalShards().join()
+                .loginAllShards()
+                .forEach(shardFuture -> shardFuture
+                    .thenAcceptAsync(Init::onShardLogin)
+                    //.exceptionally(ExceptionLogger.get())
+                );
+
         logger.info("Bot instance created");
 
         //Displays bot token if enabled
@@ -60,14 +61,25 @@ public class Init {
             logger.info("Bot token set to: " + props.token);
         }
 
-        //Displays the bot invite link
-        if (props.showInviteLink) {
-            logger.info("Bot invite link is: " + api.createBotInvite());
+    }
+
+    private static void onShardLogin(DiscordApi api) {
+        Props props = new Props();
+
+        logger.info("Shard " + api.getCurrentShard() + " logged in");
+
+        api.addListener(new MessageListeners());
+        api.addListener(new ServerBecomesAvailableListeners());
+
+        Collection<Server> servers = api.getServers();
+        for (Server server : servers) {
+            logger.info("Joined Sever " + server.getName() + " with id " + server.getId());
         }
 
         logger.info("Updating bot activity");
         api.updateActivity(ActivityType.CUSTOM, props.defaultActivity);
         logger.info("Bot activity set to: " + api.getActivity());
-        return api;
+
+        Main.apis.add(api);
     }
 }

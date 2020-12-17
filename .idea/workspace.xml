@@ -10,11 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc3a0ec9-8ead-43d8-a23e-c5e5ca209004" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Audio/LavaPlayerAudioSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Audio/Play.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discordbot.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discordbot.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Init.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/MessageListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/ServerBecomesAvailableListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/bot/Listener/ServerBecomesAvailableListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/cli/CLIHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/MaFeLP/cli/CLIHub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Init.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/MessageListeners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/ServerBecomesAvailableListeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/bot/Listener/ServerBecomesAvailableListeners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/cli/CLIHub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/MaFeLP/cli/CLIHub.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +125,12 @@
       <workItem from="1605122500890" duration="2320000" />
       <workItem from="1606062047526" duration="16714000" />
       <workItem from="1606850509461" duration="85000" />
-      <workItem from="1606850642918" duration="6212000" />
+      <workItem from="1606850642918" duration="6390000" />
+      <workItem from="1606915227104" duration="632000" />
+      <workItem from="1607514688916" duration="1270000" />
+      <workItem from="1607716609063" duration="2065000" />
+      <workItem from="1608209849647" duration="15000" />
+      <workItem from="1608217384561" duration="4802000" />
     </task>
     <task id="LOCAL-00001" summary="File add commit">
       <created>1604434769020</created>
@@ -142,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606079725106</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Resolved a security error when building artifact: build with maven.&#10;&#10;Fixed some maven building issues.&#10;&#10;Fixed a not running Bot as Jar file.&#10;WARNING: Jar file currently doesn't have logging support!">
+      <created>1606857642958</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606857642959</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,13 +178,18 @@
     <MESSAGE value="added help, invite, botinvite commands&#10;Moved more commands to embed-output" />
     <MESSAGE value="Small Update with some fixes&#10;Updated build in out/artifacts/DiscordBot_jar/*" />
     <MESSAGE value="Added new Logging interface with log4j2.&#10;&#10;INFO: Logging is under development. Some classes/Methods need to be updated to the new standard...&#10;&#10;WARN: By now, the bot only runs in intelliJ IDEA, not on the terminal!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new Logging interface with log4j2.&#10;&#10;INFO: Logging is under development. Some classes/Methods need to be updated to the new standard...&#10;&#10;WARN: By now, the bot only runs in intelliJ IDEA, not on the terminal!" />
+    <MESSAGE value="Resolved a security error when building artifact: build with maven.&#10;&#10;Fixed some maven building issues.&#10;&#10;Fixed a not running Bot as Jar file.&#10;WARNING: Jar file currently doesn't have logging support!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolved a security error when building artifact: build with maven.&#10;&#10;Fixed some maven building issues.&#10;&#10;Fixed a not running Bot as Jar file.&#10;WARNING: Jar file currently doesn't have logging support!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606853919574">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
     <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606853919574" />
+    <state x="769" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1607716900198">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="769" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1607716900198" />
     <state x="698" y="315" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606068030127">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -168,37 +198,46 @@
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
     <state x="644" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606850520572" />
+    <state x="738" y="398" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1607717358547">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="738" y="398" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1607717358547" />
     <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1604863588322">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="698" y="271" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1604863588322" />
-    <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2" timestamp="1606079724800">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state x="554" y="69" width="809" height="894" key="CommitChangelistDialog2" timestamp="1606857642659">
+      <screen x="0" y="0" width="1920" height="1034" />
     </state>
+    <state x="554" y="69" width="809" height="894" key="CommitChangelistDialog2/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606857642659" />
     <state x="554" y="70" width="801" height="902" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079724800" />
     <state x="748" y="280" key="FileChooserDialogImpl" timestamp="1606072136155">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="748" y="280" key="FileChooserDialogImpl/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606072136155" />
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1606856213724">
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1608222166583">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213724" />
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1608222166583" />
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1034@0.0.1920.1034" timestamp="1607515353310" />
     <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746054" />
-    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1606856213724">
+    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1608222166583">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213724" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1608222166583" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1034@0.0.1920.1034" timestamp="1607515353306" />
     <state width="1874" height="275" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746053" />
-    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1606856213723">
+    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1608222166583">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213723" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1608222166583" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1034@0.0.1920.1034" timestamp="1607515353304" />
     <state width="1874" height="275" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746053" />
-    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1606856213724">
+    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1608222166583">
       <screen x="0" y="0" width="1920" height="1034" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606856213724" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1608222166583" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1034@0.0.1920.1034" timestamp="1607515353308" />
     <state width="1874" height="275" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079746053" />
     <state x="498" y="180" key="Maven.ArtifactSearchDialog" timestamp="1606068906428">
       <screen x="0" y="0" width="1920" height="1044" />
@@ -208,9 +247,18 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="458" y="134" width="1024" height="844" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606068049331" />
-    <state x="560" y="258" key="Vcs.Push.Dialog.v2" timestamp="1606079730372">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606857646124">
+      <screen x="0" y="0" width="1920" height="1034" />
     </state>
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1606857646124" />
     <state x="560" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1606079730372" />
+    <state x="764" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607717118193">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="764" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1607717118193" />
+    <state x="741" y="263" key="refactoring.ChangeSignatureDialog" timestamp="1607717409455">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="741" y="263" key="refactoring.ChangeSignatureDialog/0.0.1920.1034/1920.0.1920.1080@0.0.1920.1034" timestamp="1607717409455" />
   </component>
 </project>

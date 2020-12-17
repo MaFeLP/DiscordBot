@@ -6,10 +6,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
 
+import java.util.ArrayList;
+
 import static java.lang.System.err;
 import static java.lang.System.out;
 
 public class Main {
+
+    public static volatile ArrayList<DiscordApi> apis;
 
     public static void main (String[] args) {
         Props props = new Props(); //Settings to call
@@ -26,21 +30,23 @@ public class Main {
 
     /**
      * Shuts the bot down safely
-     * @param api The Discord Bot instance
      */
-    public static void shutdown (DiscordApi api) {
-        //Shutdown sequence
-        Logger logger = LogManager.getLogger(Main.class);
-        logger.warn("\tBot and java runtime are being shut down");
-        if (api != null) {
-            logger.info("\tDisconnecting the bot safely");
-            api.disconnect();
-            logger.info("\tBot successfully disconnected");
-        } else {
-            logger.error("\tNo bot was running. Ignoring");
-        }
+    public static void shutdown () {
+        for (DiscordApi api: apis) {
 
-        logger.info("\tExiting Java Runtime with exit code 0");
-        System.exit(0);
+            //Shutdown sequence
+            Logger logger = LogManager.getLogger(Main.class);
+            logger.warn("\tBot and java runtime are being shut down");
+            if (api != null) {
+                logger.info("\tDisconnecting the bot safely");
+                api.disconnect();
+                logger.info("\tBot successfully disconnected");
+            } else {
+                logger.error("\tNo bot was running. Ignoring");
+            }
+
+            logger.info("\tExiting Java Runtime with exit code 0");
+            System.exit(0);
+        }
     }
 }

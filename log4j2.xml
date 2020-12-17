@@ -18,7 +18,10 @@
         <Logger name="com.github.MaFeLP.cli.CLIHub" level="info" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
-        <Logger name="com.github.MaFeLP.bot.Listener.MessageListeners" level="debug" additivity="false">
+        <Logger name="com.github.MaFeLP.bot.Listener.MessageListeners" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="com.github.MaFeLP.bot.Listener.ServerBecomesAvailableListeners" level="info" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
         <Root level="info">

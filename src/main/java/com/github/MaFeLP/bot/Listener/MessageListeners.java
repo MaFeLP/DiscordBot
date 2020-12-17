@@ -64,6 +64,9 @@ public class MessageListeners implements MessageCreateListener {
           "disconnect", "shutdown", "exit",
           "myID",
           "botID",
+          "rick",
+          "yt", "youtube",
+          "p", "play",
           "invite",
           "botinvite",
           "test"
@@ -213,7 +216,7 @@ public class MessageListeners implements MessageCreateListener {
         }
 
         //Shutdown sequence
-        Main.shutdown(e.getApi());
+        Main.shutdown();
     }
 
     /**
@@ -403,7 +406,18 @@ public class MessageListeners implements MessageCreateListener {
     }
 
     private void errorOnPermission(MessageCreateEvent e) {
-        //TODO add permissions required Error
+        EmbedBuilder reply = new EmbedBuilder()
+                .setTitle("Error")
+                .setDescription("Permissions required!")
+                .setAuthor(author)
+                .addField("Error description", "You do not have the permission to execute this command!")
+                .setColor(Color.RED)
+                .setFooter(null)
+                ;
+
+        new MessageBuilder()
+                .setEmbed(reply)
+                .send(channel);
     }
 }
 

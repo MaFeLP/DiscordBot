@@ -17,13 +17,9 @@ public class CLIHub {
     //Initialises a logger for this class
     private static final Logger logger = LogManager.getLogger(CLIHub.class);
 
-    public void startCLI(DiscordApi api, Props props) {
+    public void startCLI(Props props) {
         logger.info("Starting command line interface");
         logger.info("Command line interface started. Use 'help' for help");
-
-        if (api == null) {
-            logger.warn("\nBot hasn't joined any servers!\nUse \"join\" to join!");
-        }
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -38,8 +34,8 @@ public class CLIHub {
                 case "shutdown", "exit" -> shutdown = true;
                 case "help" -> help(inputArray);
                 //case "settings" -> settings(inputArray);
-                case "join" -> api = join();
-                case "disconnect" -> api = disconnect(api);
+                case "join" -> join();
+                case "disconnect" -> disconnect();
                 default -> err.println("Command \"" + command + "\" is not a valid command! Use \"help\" for help.");
             }
 
@@ -48,7 +44,7 @@ public class CLIHub {
 
         //Shutdown
         keyboard.close();
-        Main.shutdown(api);
+        Main.shutdown();
     }
 
     private void help(String[] args) {
@@ -100,13 +96,15 @@ public class CLIHub {
         }
     }
 
-    private DiscordApi disconnect(DiscordApi api) {
-        if (api != null) {
-            out.println(Colors.BLUE + "Shutting the bot safely down..." + Colors.RESET);
-            api.disconnect();
-            out.println(Colors.GREEN_BOLD_BRIGHT + "==> Done!" + Colors.RESET);
-        } else {
-            err.println("Cannot disconnect the bot!\nNo bot running!\n\nUse join to join the bot!");
+    private DiscordApi disconnect() {
+        for (DiscordApi api : Main.apis) {
+            if (api != null) {
+                out.println(Colors.BLUE + "Shutting the bot safely down..." + Colors.RESET);
+                api.disconnect();
+                out.println(Colors.GREEN_BOLD_BRIGHT + "==> Done!" + Colors.RESET);
+            } else {
+                err.println("Cannot disconnect the bot!\nNo bot running!\n\nUse join to join the bot!");
+            }
         }
 
         return null;
