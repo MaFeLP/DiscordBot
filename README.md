@@ -1,3 +1,7 @@
+**This repository will be archived and no longer maintained!**
+
+**See [https://github.com/MaFeLP/discord_bots](https://github.com/MaFeLP/discord_bots) which might be a replacement in the future**
+
 # DiscordBot
 ## General
 This is a Java written Discord bot based on the [javacord API](https://github.com/Javacord/Javacord).
